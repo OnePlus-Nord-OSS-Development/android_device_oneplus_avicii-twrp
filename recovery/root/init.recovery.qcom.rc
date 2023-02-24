@@ -56,3 +56,6 @@ on fs
     symlink /dev/block/bootdevice/by-name/oem_stanvbk     /dev/block/bootdevice/by-name/oem_stanvbk_b
     symlink /dev/block/bootdevice/by-name/oem_dycnvbk     /dev/block/bootdevice/by-name/oem_dycnvbk_a
     symlink /dev/block/bootdevice/by-name/oem_dycnvbk     /dev/block/bootdevice/by-name/oem_dycnvbk_b
+    mkdir /dev/fscklogs 0770 root system
+    chown root system /dev/fscklogs/log
+    chmod 0770 /dev/fscklogs/log
