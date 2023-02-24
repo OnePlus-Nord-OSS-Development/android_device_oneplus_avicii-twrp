@@ -73,6 +73,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl.recovery
 
+# Hidl Service
+PRODUCT_ENFORCE_VINTF_MANIFEST := true
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
