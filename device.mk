@@ -101,3 +101,7 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 # OEM otacert
 PRODUCT_EXTRA_RECOVERY_KEYS += \
     $(LOCAL_PATH)/security/oneplus
+
+# tzdata
+PRODUCT_PACKAGES_ENG += \
+    tzdata_twrp
