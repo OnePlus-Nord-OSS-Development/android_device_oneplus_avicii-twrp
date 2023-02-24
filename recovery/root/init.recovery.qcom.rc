@@ -27,6 +27,13 @@
 
 import /init.recovery.qcom_decrypt.rc
 
+service make-fake-partitions-service /system/bin/make-fake-partitions-service.sh reserve
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 service qti-vibrator-1-2 /system/bin/vendor.qti.hardware.vibrator@1.2-service
     user root
     group root
@@ -42,6 +49,8 @@ on init
 on boot
    start qti-vibrator-1-2
    start health-hal-2-1
+   chmod 0777 /system/bin/make-fake-partitions-service.sh
+   start make-fake-partitions-service
 
 on property:ro.boot.usbcontroller=*
     setprop sys.usb.controller ${ro.boot.usbcontroller}
